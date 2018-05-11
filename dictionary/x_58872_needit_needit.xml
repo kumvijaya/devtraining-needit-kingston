@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" type="collection">
+    <element audit="true" extends="task" label="DevOps Onboarding" max_length="40" name="x_58872_needit_needit" sizeclass="18" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Application name" mandatory="true" max_length="40" name="u_application" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Application abbreviation" mandatory="true" max_length="5" name="u_application_abbreviation" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Application Name" mandatory="true" max_length="80" name="u_application_name" type="string">
+            <choice/>
+        </element>
+        <element default="true" label="Artifactory" max_length="40" name="u_artifactory_needed" type="boolean"/>
+        <element default="true" label="Jenkins" max_length="40" name="u_jenkins_needed" type="boolean"/>
         <element attributes="edge_encryption_enabled=true" label="Other" max_length="40" name="u_other" type="string"/>
         <element label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
         <element attributes="edge_encryption_enabled=true" label="Requested for email" mandatory="true" max_length="40" name="u_requested_for_email" type="string"/>
@@ -11,6 +18,8 @@
                 <element label="Legal" sequence="2" value="legal"/>
             </choice>
         </element>
+        <element default="true" label="Sonar" max_length="40" name="u_sonar_needed" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" label="New String" max_length="40" name="u_string_10" type="string"/>
         <element attributes="edge_encryption_enabled=true" choice="3" default="hr1" label="What needed" mandatory="true" max_length="40" name="u_what_needed" type="string">
             <choice>
                 <element label="Human Resources 1" sequence="0" value="hr1"/>
@@ -23,5 +32,6 @@
             </choice>
         </element>
         <element label="When needed" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
+        <element default="true" label="XLRelease" max_length="40" name="u_xlr_needed" type="boolean"/>
     </element>
 </database>
